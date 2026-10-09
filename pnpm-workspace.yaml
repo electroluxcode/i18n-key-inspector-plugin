@@ -8,6 +8,10 @@ allowBuilds:
 onlyBuiltDependencies:
   - esbuild
 
+# pnpm 11.22 在子包目录下自动 install 时不加载 catalog (bug), 统一从根目录安装,
+# 关闭运行命令前的依赖状态自动检查
+verifyDepsBeforeRun: false
+
 # 共享依赖版本统一走 catalog
 catalog:
   vite: ^6.0.0

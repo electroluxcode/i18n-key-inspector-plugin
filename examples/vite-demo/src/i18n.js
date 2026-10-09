@@ -1,4 +1,4 @@
-import { wrapWithDevKey } from 'i18n-key-inspector/runtime'
+import { wrapWithDevKey } from 'i18n-key-inspector-plugin/runtime'
 
 /**
  * 最小 i18n 实现: 词典 + t()。

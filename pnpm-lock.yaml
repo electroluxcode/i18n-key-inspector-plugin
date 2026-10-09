@@ -30,8 +30,8 @@ importers:
 
   examples/vite-demo:
     dependencies:
-      i18n-key-inspector:
-        specifier: link:../..
+      i18n-key-inspector-plugin:
+        specifier: workspace:*
         version: link:../..
     devDependencies:
       vite:

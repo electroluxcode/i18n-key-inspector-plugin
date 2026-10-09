@@ -43,7 +43,7 @@ function prependEntry(entry, inject) {
  */
 export function webpackPlugin(options = {}) {
   return {
-    name: 'i18n-key-inspector',
+    name: 'i18n-key-inspector-plugin',
     apply(compiler) {
       const mode = compiler.options.mode || process.env.NODE_ENV
       if (mode !== 'development') return

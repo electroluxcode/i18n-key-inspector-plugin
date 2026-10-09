@@ -33,12 +33,12 @@ module.exports = function i18nKeyInjectLoader(content, map, meta) {
         })
         callback(null, result ? result.code : content, result ? result.map : map)
       } catch (e) {
-        console.warn(`[i18n-key-inspector] transform failed: ${filePath}`, e)
+        console.warn(`[i18n-key-inspector-plugin] transform failed: ${filePath}`, e)
         callback(null, content, map)
       }
     })
     .catch((e) => {
-      console.warn(`[i18n-key-inspector] loader load failed: ${filePath}`, e)
+      console.warn(`[i18n-key-inspector-plugin] loader load failed: ${filePath}`, e)
       callback(null, content, map)
     })
 }

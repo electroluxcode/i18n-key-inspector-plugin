@@ -23,7 +23,7 @@ describe('vite plugin', () => {
   it('默认仅 apply 到 serve, 不影响构建产物', () => {
     const plugin = i18nKeyInspector()
     expect(plugin.apply).toBe('serve')
-    expect(plugin.name).toBe('i18n-key-inspector')
+    expect(plugin.name).toBe('i18n-key-inspector-plugin')
   })
 
   it('transform 模式: 静态 key 注入到 JSX 元素', () => {
@@ -60,7 +60,7 @@ describe('vite plugin', () => {
   it('webpack bundler 返回 webpack 插件对象', () => {
     const plugin = i18nKeyInspector({ bundler: 'webpack' })
     expect(plugin).toBeDefined()
-    expect(plugin.name).toBe('i18n-key-inspector')
+    expect(plugin.name).toBe('i18n-key-inspector-plugin')
   })
 
   it('不支持的 bundler 打警告并返回占位插件', () => {
@@ -69,7 +69,7 @@ describe('vite plugin', () => {
     console.warn = (msg) => warnings.push(msg)
     try {
       const plugin = i18nKeyInspector({ bundler: 'rollup' })
-      expect(plugin.name).toBe('i18n-key-inspector')
+      expect(plugin.name).toBe('i18n-key-inspector-plugin')
     } finally {
       console.warn = originalWarn
     }

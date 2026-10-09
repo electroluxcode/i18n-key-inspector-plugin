@@ -132,5 +132,5 @@ if (typeof window !== 'undefined' && !window.__I18N_KEY_INSPECTOR_DEV__) {
     walk(document.body || document.documentElement)
   }
 
-  console.info('[i18n-key-inspector] runtime 模式已启用: 渲染文案所在元素将带上 data-i18n-path 属性')
+  console.info('[i18n-key-inspector-plugin] runtime 模式已启用: 渲染文案所在元素将带上 data-i18n-path 属性')
 }

@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      i18n-key-inspector:
+      i18n-key-inspector-plugin:
         specifier: file:../..
         version: file:../..
     devDependencies:
@@ -460,7 +460,7 @@ packages:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
 
-  i18n-key-inspector@file:../..:
+  i18n-key-inspector-plugin@file:../..:
     resolution: {directory: ../.., type: directory}
 
   js-tokens@4.0.0:
@@ -907,7 +907,7 @@ snapshots:
 
   gensync@1.0.0-beta.2: {}
 
-  i18n-key-inspector@file:../..:
+  i18n-key-inspector-plugin@file:../..:
     dependencies:
       '@babel/core': 7.29.7
     transitivePeerDependencies:

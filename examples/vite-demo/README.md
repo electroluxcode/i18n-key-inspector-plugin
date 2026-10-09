@@ -1,6 +1,6 @@
-# i18n-key-inspector demo
+# i18n-key-inspector-plugin demo
 
-最小 Vite + 国际化项目，用于验证 i18n-key-inspector。
+最小 Vite + 国际化项目，用于验证 i18n-key-inspector-plugin。
 
 - vanilla JS 自带 `t()` 实现（[src/i18n.js](src/i18n.js)），已接好 `wrapWithDevKey`
 - [vite.config.js](vite.config.js) 注册了 `i18nKeyInspector({ bundler: 'vite' })`

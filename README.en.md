@@ -1,4 +1,4 @@
-# i18n-key-inspector
+# i18n-key-inspector-plugin
 
 [中文](./README.md) | [English](./README.en.md)
 
@@ -41,7 +41,7 @@ Benefits of this design:
 ### 1. Wrap the `t()` return value in your i18n implementation
 
 ```ts
-import { wrapWithDevKey } from 'i18n-key-inspector/runtime'
+import { wrapWithDevKey } from 'i18n-key-inspector-plugin/runtime'
 
 function t(key: string, lang?: string) {
   const value = lookupTranslation(key, lang)
@@ -58,7 +58,7 @@ has no key markers to decode.
 Add the plugin in `vite.config.ts`:
 
 ```ts
-import { i18nKeyInspector } from 'i18n-key-inspector'
+import { i18nKeyInspector } from 'i18n-key-inspector-plugin'
 
 export default defineConfig({
   plugins: [
@@ -75,7 +75,7 @@ In Vite mode the observer is injected into the `<head>` of the dev page via
 Add the webpack plugin to the client-side dev compilation in `next.config.ts`:
 
 ```ts
-import { i18nKeyInspector } from 'i18n-key-inspector'
+import { i18nKeyInspector } from 'i18n-key-inspector-plugin'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -192,7 +192,7 @@ Check the following:
 - You are on the dev server, not a production build.
 - The webpack/Next config registers the plugin only in the client compilation.
 - The `t()` return value goes through `wrapWithDevKey(key, value)`.
-- The browser console shows `[i18n-key-inspector] runtime 模式已启用`.
+- The browser console shows `[i18n-key-inspector-plugin] runtime 模式已启用`.
 - The return value is a non-empty string; objects, React nodes and nullish
   values are not annotated by the runtime wrapper.
 
@@ -209,5 +209,5 @@ other metadata, and only adds the observer to `import`.
 
 ## API exports
 
-- `i18n-key-inspector`: `i18nKeyInspector`
-- `i18n-key-inspector/runtime`: `wrapWithDevKey`
+- `i18n-key-inspector-plugin`: `i18nKeyInspector`
+- `i18n-key-inspector-plugin/runtime`: `wrapWithDevKey`

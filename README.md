@@ -1,4 +1,4 @@
-# i18n-key-inspector
+# i18n-key-inspector-plugin
 
 [中文](./README.md) | [English](./README.en.md)
 
@@ -32,7 +32,7 @@
 ### 1. 在 i18n 实现中包装 `t()` 返回值
 
 ```ts
-import { wrapWithDevKey } from 'i18n-key-inspector/runtime'
+import { wrapWithDevKey } from 'i18n-key-inspector-plugin/runtime'
 
 function t(key: string, lang?: string) {
   const value = lookupTranslation(key, lang)
@@ -48,7 +48,7 @@ function t(key: string, lang?: string) {
 在 `vite.config.ts` 中添加插件：
 
 ```ts
-import { i18nKeyInspector } from 'i18n-key-inspector'
+import { i18nKeyInspector } from 'i18n-key-inspector-plugin'
 
 export default defineConfig({
   plugins: [
@@ -64,7 +64,7 @@ Vite 模式通过 `transformIndexHtml` 在开发页面的 `<head>` 中注入 obs
 在 `next.config.ts` 的客户端开发编译中添加 webpack 插件：
 
 ```ts
-import { i18nKeyInspector } from 'i18n-key-inspector'
+import { i18nKeyInspector } from 'i18n-key-inspector-plugin'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -169,7 +169,7 @@ pnpm demo     # 启动示例项目（最小 Vite + 国际化），在 DevTools �
 - 当前是开发服务器，而不是 production build。
 - webpack/Next 配置只在客户端编译中注册了插件。
 - `t()` 的返回值经过 `wrapWithDevKey(key, value)`。
-- 浏览器控制台出现 `[i18n-key-inspector] runtime 模式已启用`。
+- 浏览器控制台出现 `[i18n-key-inspector-plugin] runtime 模式已启用`。
 - 返回值是非空字符串；对象、React 节点和空值不会被 runtime wrapper 标记。
 
 ### Next.js 报 `entry was not found`
@@ -185,5 +185,5 @@ config.plugins.push(i18nKeyInspector({ bundler: 'webpack' }))
 
 ## API 导出
 
-- `i18n-key-inspector`：`i18nKeyInspector`
-- `i18n-key-inspector/runtime`：`wrapWithDevKey`
+- `i18n-key-inspector-plugin`：`i18nKeyInspector`
+- `i18n-key-inspector-plugin/runtime`：`wrapWithDevKey`

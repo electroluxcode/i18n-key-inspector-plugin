@@ -11,7 +11,7 @@ const ATTR = 'data-i18n-path'
  * 在最近的父元素上打 data-i18n-path 属性, 仅开发环境生效)
  *
  * 用法:
- *   import { i18nKeyInspector } from 'i18n-key-inspector'
+ *   import { i18nKeyInspector } from 'i18n-key-inspector-plugin'
  *   i18nKeyInspector({ bundler: 'vite' })    // vite.config.ts
  *   i18nKeyInspector({ bundler: 'webpack' }) // next.config.ts webpack(config) 内
  *
@@ -167,7 +167,7 @@ export const CLIENT_CODE = String.raw`
     walk(document.body || document.documentElement)
   }
 
-  console.info('[i18n-key-inspector] runtime 模式已启用: 渲染文案所在元素将带上 data-i18n-path 属性')
+  console.info('[i18n-key-inspector-plugin] runtime 模式已启用: 渲染文案所在元素将带上 data-i18n-path 属性')
 })()
 `
 
@@ -180,12 +180,12 @@ export function i18nKeyInspector(userOptions = {}) {
   if (options.bundler === 'webpack') return webpackPlugin(options)
 
   if (options.bundler !== 'vite') {
-    console.warn(`[i18n-key-inspector] 暂不支持 bundler: ${options.bundler}, 插件未启用`)
-    return { name: 'i18n-key-inspector' }
+    console.warn(`[i18n-key-inspector-plugin] 暂不支持 bundler: ${options.bundler}, 插件未启用`)
+    return { name: 'i18n-key-inspector-plugin' }
   }
 
   const vitePlugin = {
-    name: 'i18n-key-inspector',
+    name: 'i18n-key-inspector-plugin',
     apply: 'serve', // 仅开发服务器, 构建产物不受影响
     transformIndexHtml(html) {
       // 注入到 <head> 顶部, 保证在应用代码执行前设置 flag 并启动观察者
@@ -208,7 +208,7 @@ export function i18nKeyInspector(userOptions = {}) {
       try {
         return injectI18nKey(code, transformOptions)
       } catch (e) {
-        console.warn(`[i18n-key-inspector] transform failed: ${filePath}`, e)
+        console.warn(`[i18n-key-inspector-plugin] transform failed: ${filePath}`, e)
         return null
       }
     }
