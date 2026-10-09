@@ -1,0 +1,47 @@
+{
+  "name": "i18n-key-inspector",
+  "version": "0.0.1",
+  "description": "Dev-only Vite/webpack plugin that stamps rendered DOM elements with their i18n message keys (data-i18n-path), so rendered text can be traced back to its message key in DevTools",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./runtime": {
+      "types": "./src/runtime/wrap.d.ts",
+      "default": "./src/runtime/wrap.js"
+    }
+  },
+  "keywords": [
+    "i18n",
+    "vite-plugin",
+    "webpack-plugin",
+    "inspector",
+    "devtools"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electroluxcode/i18n-key-inspector.git"
+  },
+  "homepage": "https://github.com/electroluxcode/i18n-key-inspector#readme",
+  "bugs": {
+    "url": "https://github.com/electroluxcode/i18n-key-inspector/issues"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "demo": "pnpm -C examples/vite-demo dev"
+  },
+  "dependencies": {
+    "@babel/core": "^7.26.0"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0",
+    "vite": "catalog:",
+    "vitest": "^3.0.0"
+  }
+}

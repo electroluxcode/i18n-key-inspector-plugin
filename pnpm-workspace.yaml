@@ -1,0 +1,13 @@
+packages:
+  - examples/*
+
+allowBuilds:
+  esbuild: true
+
+# pnpm 默认不跑依赖的构建脚本, 放行 esbuild 的 postinstall
+onlyBuiltDependencies:
+  - esbuild
+
+# 共享依赖版本统一走 catalog
+catalog:
+  vite: ^6.0.0
