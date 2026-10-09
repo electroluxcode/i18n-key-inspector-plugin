@@ -3,10 +3,10 @@ import { getLang, setLang, statusKey, t } from './i18n.js'
 /**
  * 演示页覆盖的场景:
  * 1. 静态 key 文本      -> <h1 data-i18n-path="demo.title">
- * 2. 同一元素多条翻译   -> data-i18n-path 用 | 分隔
+ * 2. 同一文本多个标记   -> data-i18n-path 只保留第一个 key
  * 3. 属性翻译           -> key 写到独立的 data-i18n-path-<属性名>, 不与正文混合
  * 4. 动态 key           -> statusKey(code) 运行时拼接
- * 5. 语言切换后重渲染   -> 文案变化, key 不变
+ * 5. 语言切换后重渲染   -> 文案变化, key 覆盖为最新
  */
 function render() {
   const app = document.getElementById('app')
