@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Dev-only Vite/webpack plugin that stamps rendered DOM elements with their i18n message keys (data-i18n-path), so rendered text can be traced back to its message key in DevTools",
   "publishConfig": {
-    
+    "access": "public"
   },
   "type": "module",
   "main": "src/index.js",
